@@ -16,10 +16,12 @@ build/
 .env.*
 !.env.example
 
-# Working notes — private investigation handoff, NEVER committed.
+# Working notes & drafts — NEVER committed.
 # This repo may be attached to a public upstream issue; HANDOFF.md carries
-# internal epistemic state and off-repo motivation and must stay local-only.
+# internal epistemic state and off-repo motivation, and ISSUE_DRAFT.md is a
+# work-in-progress issue body. Both stay local-only.
 HANDOFF.md
+ISSUE_DRAFT.md
 
 # Test output
 coverage/
