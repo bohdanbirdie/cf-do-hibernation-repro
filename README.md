@@ -63,12 +63,10 @@ npm run probe 8787              # terminal 2 — timer DO: boots should stay 1
 Every finding here is **version-scoped** (results hold for `vitest-pool-workers` 0.18.x /
 `vitest` 4.1.x). The lockfile is committed; record `npm run versions` output alongside any result.
 
-## Traps (learned the hard way)
+## Notes
 
 1. **Measure via a durable counter over a normal request path — not `runInDurableObject` or a
    retained stub.** Either one pins the actor and produces a false "never hibernated" reading.
-   (An earlier version of this repro concluded DOs never hibernate here; that was this exact
-   measurement artifact, not the platform.)
 2. **Pair the regression guard with a baseline that must hibernate.** A guard that only asserts
    "the timer DO did not hibernate" passes vacuously if the harness ever stops hibernating at
    all; the plain-DO baseline is what proves the guard can still catch anything.
