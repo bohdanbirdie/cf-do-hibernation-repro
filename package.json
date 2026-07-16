@@ -1,0 +1,20 @@
+{
+  "name": "cf-do-hibernation-repro",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Minimal repro rig: can Cloudflare Durable Object WebSocket hibernation be regression-tested? A plain DO vs. a DO holding one setInterval.",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "dev:plain": "wrangler dev --var PIN_WITH_TIMER:false",
+    "dev:timer": "wrangler dev --var PIN_WITH_TIMER:true",
+    "probe": "node probe.mjs",
+    "versions": "npm ls @cloudflare/vitest-pool-workers vitest wrangler miniflare"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.18.0",
+    "vitest": "^4.1.0",
+    "wrangler": "^4.111.0"
+  }
+}

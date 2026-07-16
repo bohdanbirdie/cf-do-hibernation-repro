@@ -1,0 +1,15 @@
+name = "hib-test"
+main = "src/do.js"
+compatibility_date = "2025-10-01"
+
+[[durable_objects.bindings]]
+name = "PLAIN_ROOM"
+class_name = "PlainRoom"
+
+[[durable_objects.bindings]]
+name = "TIMER_ROOM"
+class_name = "TimerRoom"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["PlainRoom", "TimerRoom"]

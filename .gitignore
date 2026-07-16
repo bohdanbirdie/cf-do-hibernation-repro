@@ -1,0 +1,59 @@
+# Dependencies
+node_modules/
+
+# Wrangler / Miniflare local state
+.wrangler/
+.mf/
+
+# Build output
+dist/
+build/
+
+# Secrets & local env
+.dev.vars
+.dev.vars.*
+.env
+.env.*
+!.env.example
+
+# Working notes — private investigation handoff, NEVER committed.
+# This repo may be attached to a public upstream issue; HANDOFF.md carries
+# internal epistemic state and off-repo motivation and must stay local-only.
+HANDOFF.md
+
+# Test output
+coverage/
+.vitest-reports/
+
+# npm noise
+npm-debug.log*
+.npm/
+
+# OS / editor artifacts.
+# Duplicated from ~/.gitignore on purpose: a global excludesfile is personal and
+# anyone cloning this repro (the whole point of it) won't have one.
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+.idea/
+.vscode/
+.zed/
+*.swp
+*.swo
+*~
+
+# ---------------------------------------------------------------------------
+# Deliberately NOT ignored — both are load-bearing for this repo:
+#
+#   *.log             Captured wrangler/vitest output is EVIDENCE, not noise.
+#                     The governing rule is "no claim without raw output", so
+#                     every experiment's log gets committed (see dev_*.log).
+#                     Do not add a blanket *.log rule — it would silently skip
+#                     the next agent's `git add` of exactly the artifact that
+#                     makes a finding citable upstream.
+#
+#   package-lock.json Every finding here is version-scoped (V1-V4 hold for
+#                     vitest-pool-workers 0.18.x / vitest 4.1.x). The lockfile
+#                     is what makes a result reproducible by a CF maintainer.
+# ---------------------------------------------------------------------------

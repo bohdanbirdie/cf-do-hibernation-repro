@@ -1,0 +1,19 @@
+
+Cloudflare collects anonymous telemetry about your usage of Wrangler. Learn more at https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler/telemetry.md
+
+ ⛅️ wrangler 4.42.2 (update available 4.111.0)
+──────────────────────────────────────────────
+Your Worker has access to the following bindings:
+Binding                           Resource                  Mode
+env.ROOM (Room)                   Durable Object            local
+env.PIN_WITH_TIMER ("false")      Environment Variable      local
+env.AUTO_RESPONSE ("true")        Environment Variable      local
+
+⎔ Starting local server...
+⎔ Reloading local server...
+[wrangler:info] Ready on http://localhost:8799
+[wrangler:info] GET / 101 Switching Protocols (4ms)
+[wrangler:info] GET /boots 200 OK (2ms)
+[wrangler:info] GET /boots 200 OK (6ms)
+⎔ Reloading local server...
+⎔ Reloading local server...
